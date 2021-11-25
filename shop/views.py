@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404
 
-
 # Create your views here.
 from .models import Category, Product
 
@@ -24,3 +23,7 @@ def product(request, category_slug, product_slug):
     except Exception as e:
         raise e
     return render(request, 'product.html', {'product': product})
+
+
+def cart(request):
+    return render(request, 'cart.html')
